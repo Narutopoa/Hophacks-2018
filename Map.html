@@ -11,15 +11,26 @@
 </head>
 <body>
 <!-- Menu -->
-<div class="container" onclick="myFunction(this)">
-  <div class="bar1"></div>
-  <div class="bar2"></div>
-  <div class="bar3"></div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="Landing Page.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+  </div>
+</nav>
+<div class="col-md-5 p-lg-6 mx-auto my-5">
 <!-- MAP -->
 <h3>My Google Maps Demo</h3>
 <div class="container">
  <div id="map"></div>
+</div>
 </div>
 <script src="Menu.js"></script>
 <script src="Map.js"></script>
