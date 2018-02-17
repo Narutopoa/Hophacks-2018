@@ -5,5 +5,7 @@ CREATE PROCEDURE InsertOrg(IN nm varchar(30), strt varchar(50), city varchar(50)
 BEGIN
 	INSERT INTO Organizations (Name, Street, City, State, Related_Major1, Org_Type)
 	VALUES (nm, strt, city, state, relmaj1, orgtype);
+
+	SELECT "Your information was inserted correctly." AS RESULT;
 END//
 delimiter ;
