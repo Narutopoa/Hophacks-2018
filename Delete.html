@@ -1,16 +1,14 @@
 <html>
 <head>
-	<title> Organization Registry</title>
-	<link rel="stylesheet" href="Menu.css">
+	<title>Delete an Organization</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 </head>
-<body>
-<!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,24 +22,19 @@
       </ul>
   </div>
 </nav>
-<!-- Registration Form -->
-<div class="col-md-5 p-lg-6 mx-auto my-5">
-<!-- Name of Org-->
-<form action="Insert.php" method="post">
-            Name of Organization: <input type="text" name="nm">
-<!-- Street-->
-            Sector: <input type="text" name="strt">
-<!-- City -->
-            Area of Operation: <input type="text" name="city">
-<!-- State-->
-            Description of Service Provided: <input type="text" name="state">
-<!-- Realted_Major1-->
-            Description of Service Provided: <input type="text" name="relmaj1">
-<!-- Org_Type-->
-            Description of Service Provided: <input type="text" name="orgtype">
-            <input type="submit">
+
+	<!-- Form -->
+<div class="col-md-5 p-lg-16 mx-auto my-5">
+<form action="Delete.php">
+  <div class="form-group">
+    <label for="Location">Name of Organization</label>
+    <input type="Location" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the name of an organization.">
+    <small id="emailHelp" class="form-text text-muted"> Delete an organization from the database.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
-<script src="Menu.js"></script>
-</body>
+
+
+	</body>
 </html>
