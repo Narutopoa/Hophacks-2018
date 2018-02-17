@@ -14,6 +14,7 @@ function initMap() {
         var marker = new google.maps.Marker({
             position: map.getCenter(),
             map: map
+
             });
         infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
@@ -29,7 +30,8 @@ function initMap() {
             map.setCenter(pos);
             var marker = new google.maps.Marker({
             position: map.getCenter(),
-            map: map
+            map: map,
+            
             });
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
