@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+
+<p></p> <!-- this is text-->
+<div></div> <!-- comment tag: this is a serpator-->
+<form action="Avg_Price.php" method="post">
+            Exchange ID: <input type="text" name="eid">
+            Begin Date: <input type="text" name="begin">
+            End Date: <input type="text" name="end">
+            <input type="submit">
+        </form>
+<!-- this is input boxes -->
+</body>
+</html>
