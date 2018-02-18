@@ -21,9 +21,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="Landing Page.html">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="Data Entry.html">Data Entry<span class="sr-only">(current)</span></a>
-      </li>
       </ul>
   </div>
 </nav>
@@ -36,8 +33,8 @@
 
 <?php
 include 'conf.php';
-include 'open.php';
-
+//include 'open.php';
+$mysqli = new mysqli("localhost", $dbuser, $dbpass, $dbname);
 
 
 //$validpass = mysqli_query("SELECT * FROM Passwords WHERE CurPasswords = " '".$password."');
@@ -52,7 +49,7 @@ if ($res) {
 echo "<table border=\"1px solid black\">";                              // The procedure executed successfully.
                 echo "<tr><th> Result </th></tr> ";
                 while ($row = $res->fetch_assoc()) {
-                        echo "<tr><td>" . $row['Result'] . "</td></tr>";// Print every row of the result.
+                        echo "<tr><td>" . $row['Name'] . "</td></tr>";// Print every row of the result.
                 }
                 echo "</table>";
                 $res->free();                                                                           // Clean-up.

@@ -22,7 +22,7 @@
         <a class="nav-link" href="Landing Page.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="Data Entry.html">Data Entry<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Data Entry.html">Home <span class="sr-only">(current)</span></a>
       </li>
       </ul>
   </div>
@@ -37,9 +37,9 @@
 </p>
 
 <?php
-//include 'conf.php';
+include 'conf.php';
 //include 'open.php';
-$mysqli = mysqli("localhost", "aadal", "Apple123", "Hophacks2018");
+$mysqli = new mysqli("localhost", $dbuser, $dbpass, $dbname);
 
 $nm 	 = $_POST["nm"];
 $strt 	 = $_POST["strt"];
@@ -52,7 +52,8 @@ $orgtype = $_POST["orgtype"];
 //$valid = mysqli_num_rows($validpass);
 //$mysqli->multi_query("CALL InsertOrg('".$nm."','".$strt."','".$city."','".$state."','".$relmaj1."','".$orgtype."');");      // Execute the query with the input.
 
-$mysqli->query("SELECT * FROM organizations;");
+$mysqli->query("INSERT INTO organizations (Name, Street, City, State, Related_Major1, Org_Type) VALUES ('".$nm."','".$strt."','".$city."','".$state."','".$relmaj1."','".$orgtype."');");
+//$mysqli->query("SELECT * FROM organizations;");
 $res = $mysqli->store_result();
 //echo $count($res[0]);
 

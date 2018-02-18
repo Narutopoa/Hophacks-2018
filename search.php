@@ -25,34 +25,32 @@
   </div>
 </nav>
 
-<p>
-        Search for an organization.
-</p>
-
-<p>
-        <a href="Landing Page.html">Landing Page</a>
-</p>
-
+<div class="col-md-5 p-lg-6 mx-auto my-5">
 <?php
 include 'conf.php';
-include 'open.php';
+//include 'open.php';
 $orgtype	 = $_POST["orgtype"];
 
+echo "<p>Search results for '".$orgtype."' organizations.</p>";
+
+$mysqli = new mysqli("localhost", $dbuser, $dbpass, $dbname);
 
 //$validpass = mysqli_query("SELECT * FROM Passwords WHERE CurPasswords = " '".$password."');
-//$valid = mysqli_num_rows($validpass);
-$mysqli->multi_query("CALL InsertOrg('".$orgtype."');");      // Execute the query with the input.
+//$valid = mysqli_num_rows($validpass);a
+$mysqli->multi_query("SELECT * FROM Organizations WHERE Org_Type = '".$orgtype."' ;");      // Execute the query with the input.
 $res = $mysqli->store_result();
 //echo $count($res[0]);
 
 
 if ($res) {
-echo "<table border=\"1px solid black\">";                              // The procedure executed successfully.
-                echo "<tr><th> Organization </th></tr> ";
+echo "<div class=\"col-md-5 p-lg-6 mx-auto my-5\">";
+echo "<table border=\"3px solid black\">";                              // The procedure executed successfully.
+                echo "<tr><th> Organization Name </th><th> Street </th><th> City </th><th> State </th><th> Related_Major1 </th><th> Org_Type </th></tr> ";
                 while ($row = $res->fetch_assoc()) {
-                        echo "<tr><td>" . $row['Result'] . "</td></tr>";// Print every row of the result.
+                	echo "<tr><td>" . $row['Name'] . "</td><td>" . $row['Street'] . "</td><td>" . $row['City'] . "</td><td>" . $row['State'] . "</td><td>" . $row['Related_Major1'] ."</td><td>" . $row['Org_Type'] ."</td></tr>";// Print every row of the result.
                 }
                 echo "</table>";
+                echo "</div>";
                 $res->free();                                                                           // Clean-up.
 			} 	else{
                 printf("<br>Error: %s\n", $mysqli->error);                              // The procedure failed to execute.
@@ -60,9 +58,7 @@ echo "<table border=\"1px solid black\">";                              // The p
 $mysqli->close();  // Clean-up.
 ?>
 
-<p>
-        <a href="Exchanges_Price.html">Exchanges Price</a>
-</p>
+</div>
 </body>
 </html>
 

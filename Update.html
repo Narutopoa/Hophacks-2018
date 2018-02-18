@@ -22,34 +22,33 @@
       </ul>
   </div>
 </nav>
-<!-- Form -->
-<div class="col-lg-5 p-lg-16 mx-auto my-5">
-<div class="col-lg-1 col-centered">
+<!-- Form --
+<div class="col-md-5 p-lg-16 mx-auto my-5">
 <form action="Update.php">
   <div class="form-group">
-    <label for="Location">Name</label>
-    <input type="name" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the name of an organization." method="post">
-    <div></div>	
-    <label for="Location">New Name</label>
-    <input type="name2" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the new name of an organization." method="post">
-    <div></div>	
-    <label for="Location">Street</label>
-    <input type="street" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the street of an organization." method="post">
-    <div></div>
-    <label for="Location">City</label>
-    <input type="city" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the city of an organization." method="post">
-    <div></div>
-    <label for="Location">State</label>
-    <input type="state" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the state of an organization." method="post">
-    <div></div>
-    <label for="Location">Related Major</label>
-    <input type="relatedm" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the related major of an organization." method="post">
-    <div></div>
-    <label for="Location">Organzation Type</label>
-    <input type="orgtype" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the type of an organization." method="post">
+    <label for="Location">Name of Organization</label>
+    <input type="name" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the name of an organization.">
     <small id="emailHelp" class="form-text text-muted"> Update an organization from the database.</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+-->
+
+<!-- Name of Org-->
+<div class="col-md-5 p-lg-6 mx-auto my-5">
+<form action="Update.php" method="post">
+            Old Name: <input type="text" name="nm">
+            <br>
+            New Name: <input type="text" name="nm2">
+            <br>
+            City: <input type="text" name="city">
+            <br>
+            State: <input type="text" name="state">
+            <br>
+            Related Major: <input type="text" name="rm1">
+            <br>
+            Organization Type: <input type="text" name="orgtype">
+            <input type="submit">
 </form>
 </div>
 </div>
