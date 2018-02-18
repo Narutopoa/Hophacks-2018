@@ -7,6 +7,11 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+	#orgtype {
+		width:390px;
+	}
+</style>
 </head>
 	<body>
 <!-- Menu -->
@@ -33,12 +38,12 @@
 	<h1 class="display-4 font-weight-normal"> Landing Page Hophacks 2018</h1>
 </div>
 <!-- Form -->
-<div class="col-md-1 p-lg-16 mx-auto my-5">
+<div class="col-md-5 p-lg-16 mx-auto my-5">
 <form action="search.php">
-  <div class="form-group">
+  <div class="form-group" >
     <label for="Location">Location</label>
-    <input type="orgtype" class="form-control-lg" id="location" aria-describedby="emailHelp" placeholder="Enter the location of your organization.">
-    <small id="emailHelp" class="form-text text-muted"> Search for organizations in your area.</small>
+    <input type="text" class="form-control-lg" id="orgtype" aria-describedby="emailHelp"  placeholder="Enter the location of your organization.">
+    <small id="emailHelp" class="form-text text-muted" width="100%">Search for organizations in your area.</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
