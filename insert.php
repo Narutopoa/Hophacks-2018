@@ -34,8 +34,9 @@
 </p>
 
 <?php
-include 'conf.php';
-include 'open.php';
+//include 'conf.php';
+//include 'open.php';
+$mysqli = mysqli("localhost", "aadal", "Apple123", "Hophacks2018");
 
 $nm 	 = $_POST["nm"];
 $strt 	 = $_POST["strt"];
@@ -47,7 +48,8 @@ $orgtype = $_POST["orgtype"];
 //$validpass = mysqli_query("SELECT * FROM Passwords WHERE CurPasswords = " '".$password."');
 //$valid = mysqli_num_rows($validpass);
 //$mysqli->multi_query("CALL InsertOrg('".$nm."','".$strt."','".$city."','".$state."','".$relmaj1."','".$orgtype."');");      // Execute the query with the input.
-$mysqli->multi_query("SELECT * FROM Organizations;");
+
+$mysqli->query("SELECT * FROM organizations;");
 $res = $mysqli->store_result();
 //echo $count($res[0]);
 
