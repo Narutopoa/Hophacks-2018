@@ -29,8 +29,26 @@
 	include 'conf.php';
 	include 'open.php';
 	$name = $_POST["name"];
-	$mysqli->multi_query("CALL UpdateOrg('".$name."')");
+	$name2 = $_POST["name2"];
+	$street = $_POST["street"];
+	$city = $_POST["city"];
+	$state = $_POST["state"];
+	$relatedm = $_POST["relatedm"];
+	$orgtype = $_POST["orgtype"];
+	$mysqli->multi_query("CALL UpdateOrg('".$name."','".$name2."','".$street."','".$city."','".$state."','".$relatedm."','".$orgtype."')");
 	$res = $mysqli->store_result();
+	if ($res) {
+echo "<table border=\"1px solid black\">";       // The procedure executed successfully.
+                echo "<tr><th> Result </th></tr> ";
+                while ($row = $res->fetch_assoc()) {
+                        echo "<tr><td>" . $row['Result'] . "</td></tr>";// Print every row of the result.
+                }
+                echo "</table>";
+                $res->free();                                                                           // Clean-up.
+            } else{
+                printf("<br>Error: %s\n", $mysqli->error);                              // The procedure failed to execute.
+            }
+
 	$mysqli->close();
 
 	?>
