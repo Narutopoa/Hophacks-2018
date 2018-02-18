@@ -6,6 +6,6 @@ BEGIN
 	INSERT INTO Organizations (Name, Street, City, State, Related_Major1, Org_Type)
 	VALUES (nm, strt, city, state, relmaj1, orgtype);
 
-	SELECT "Your information was inserted correctly." AS RESULT;
+	SELECT "Your information was inserted correctly." AS 'Result';
 END//
 delimiter ;

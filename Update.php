@@ -29,7 +29,7 @@
 	include 'conf.php';
 	include 'open.php';
 	$name = $_POST["name"];
-	$mysqli->multi_query("CALL DELETEORG('".$name."')");
+	$mysqli->multi_query("CALL UpdateOrg('".$name."')");
 	$res = $mysqli->store_result();
 	$mysqli->close();
 

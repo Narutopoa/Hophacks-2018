@@ -1,6 +1,6 @@
 delimiter //
-DROP PROCEDURE IF EXISTS Update//
-CREATE PROCEDURE Update(IN  name varchar(30), name2 varchar(30),street varchar(50),city varchar(50), state varchar(50), relatedm varchar(50), orgtype varchar(20))
+DROP PROCEDURE IF EXISTS UpdateOrg//
+CREATE PROCEDURE UpdateOrg(IN  name varchar(30), name2 varchar(30),street varchar(50),city varchar(50), state varchar(50), relatedm varchar(50), orgtype varchar(20))
 BEGIN
 	IF name2 IS NOT NULL THEN
 		UPDATE Organizations o SET o.Name = name2 WHERE o.Name = name 
