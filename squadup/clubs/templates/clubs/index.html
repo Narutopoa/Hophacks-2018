@@ -1,0 +1,101 @@
+{% extends 'clubs/base.html' %}
+{% block clubs_active %}active{% endblock %}
+
+{% block body %}
+<div class="clubs-container container-fluid">
+
+    <!-- Clubs -->
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>{{ user.username }}'s Clubs</h3>
+        </div>
+        {% if all_clubs %}
+            {% for clubs in all_clubs %}
+                <div class="col-sm-4 col-lg-2">
+                    <div class="thumbnail">
+                        <a href="{% url 'clubs:detail' clubs.id %}">
+                            <img src="{{ clubs.logo.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h2>{{ clubs.name }}</h2>
+                            <h4>{{ clubs.club_type }}</h4>
+
+                            <!-- View Details -->
+                            <a href="{% url 'clubs:detail' clubs.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+                            <!-- Delete Clubs -->
+                            <form action="{% url 'clubs:club-delete' clubs.id %}" method="post" style="display: inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="clubs_id" value="{{ clubs.id }}" />
+                                <button type="submit" class="btn btn-default btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </form>
+
+                            <!-- Favorite Album -->
+                            <a href="#" class="btn btn-default btn-sm btn-favorite">
+                                <span class="glyphicon glyphicon-star {% if clubs.is_favorite %}active{% endif %}"></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <div class="col-sm-12">
+                <br>
+                <a href="#">
+                    <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Add a club
+                    </button>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+     <!--If user searches and there are members-->
+     {% if members %}
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Members</h3>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Major</th>
+                                    <th>Year</th>
+                                    <th>Clubs</th>
+                                    <!--<th>Favorite</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for member in members %}
+                                    <tr>
+                                        <td>{{ member.name }}</td>
+                                        <td>{{ member.major }}</td>
+                                        <td>{{ member.year }}</td>
+
+                                        <td>
+                                            <a href="{% url 'clubs:detail' member.clubs.id %}">
+                                                <img src="{{ member.clubs.logo }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" />
+                                            </a>
+                                            <a href="{% url 'clubs:detail' member.clubs.id %}">{{ member.clubs.name }}</a>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock %}

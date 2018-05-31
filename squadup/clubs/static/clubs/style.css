@@ -1,0 +1,12 @@
+body{
+    background: white url("images/circles-light.png");
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: 'Courgette', cursive;
+}
+
